@@ -1,15 +1,17 @@
-#include <iostream>
+#pragma once
 #include <string>
+using namespace std;
 
 class Integrantes{
 
 private:
-string Nombre,
-string Rol,
+string Nombre;
+string Rol;
 
 public:
-Sereshumanos(string p){
-Nombre = p,
+Integrantes(string p, string r){
+Nombre = p;
+Rol = r;
 }
 
 };
