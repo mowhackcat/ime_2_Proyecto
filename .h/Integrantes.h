@@ -9,9 +9,12 @@ string Nombre;
 string Rol;
 
 public:
-Integrantes(string p, string r){
-Nombre = p;
-Rol = r;
-}
+Integrantes(const string& nombre, const string& rol);
+string getNombre() const;
+string getRol() const;
+
+
+
+
 
 };
