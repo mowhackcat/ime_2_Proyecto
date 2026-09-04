@@ -10,6 +10,9 @@ string Rol;
 
 public:
 
+string getNombre() const;
+string getRol() const;
+
 
 Integrantes(const string& nombre, const string& rol);
 string getNombre() const;
