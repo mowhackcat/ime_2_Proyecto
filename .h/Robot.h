@@ -11,18 +11,18 @@ private:
 
 public:
 
-    Robot(string n, string t)
+    Robot(const string& n, const string& t)
     {
         nombre = n;
         tipo = t;
     }
 
-    string getNombre()
+    string getNombre() const
     {
         return nombre;
     }
 
-    string getTipo()
+    string getTipo() const  
     {
         return tipo;
     }
