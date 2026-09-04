@@ -10,11 +10,11 @@ string Rol;
 
 public:
 
-string getNombre(){
+string returnNombre(){
     return Nombre;
 }
 
-string getRol(){
+string returnRol(){
     return Rol;
 }
 
@@ -23,6 +23,6 @@ string getNombre() const;
 string getRol() const;
 
 void  Presentarse(Integrantes& integrante) {
-getNombre();
-getRol();}
+returnNombre();
+returnRol();}
 };
