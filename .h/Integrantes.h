@@ -1,6 +1,5 @@
 #pragma once
 #include <string>
-#include <iostream>
 using namespace std;
 
 class Integrantes{
@@ -10,10 +9,14 @@ string Nombre;
 string Rol;
 
 public:
+
+string getNombre() const;
+string getRol() const;
+
+
 Integrantes(const string& nombre, const string& rol);
 string getNombre() const;
 string getRol() const;
 
-void  Presentarse(Integrantes& integrante) {
-    cout << "Hola, " << integrante.getNombre() << ", soy " << Nombre << " y mi rol es " << Rol << "." << endl;}
+
 };
