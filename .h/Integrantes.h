@@ -15,8 +15,7 @@ string getRol() const;
 
 
 Integrantes(const string& nombre, const string& rol);
-string getNombre() const;
-string getRol() const;
+
 
 
 };
