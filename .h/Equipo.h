@@ -1,35 +1,29 @@
-#pragma once
+#ifndef EQUIPO_H
+#define EQUIPO_H
+
 #include <string>
 #include <vector>
-#include "Integrantes.h"
+#include "Participante.h"
 #include "Robot.h"
+
 using namespace std;
 
-class Equipo {
+class Equipo
+{
 private:
-    string nombreEquipo;
-    vector<Integrantes> integrantes;
+    string nombre;
+    vector<Participante> participantes;
     vector<Robot> robots;
 
 public:
-    //Constructor
-    explicit Equipo(const string& nombreEquipo);
+    Equipo(string nombre);
 
-    //Metodo para agregar integrantes y robots al equipo
-    void agregarIntegrante(const Integrantes& i);
+    void agregarParticipante(Participante participante)
+    void agregarRobot(Robot robot);
 
-    //Metodo para agregar robots al equipo
-    void agregarRobot(const Robot& r);
-
-    //Getter para nombre del equipo
-    string getNombreEquipo() const;
-
-    //Getter para integrantes
-    const vector<Integrantes>& getIntegrantes() const;
-
-    //Getter para robots
-    const vector<Robot>& getRobots() const;
-
-    //Metodo para mostrar un resumen del equipo
-    void mostrarResumen() const;
+    string getNombre;
+    vector<Participante>& getParticipantes();
+    vector<Robot> getRobots();
 };
+
+#endif
