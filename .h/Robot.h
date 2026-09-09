@@ -1,29 +1,21 @@
-#pragma once
-#include <string>
-#include <iostream>
+#ifndef ROBOT_H
+#define ROBOT_H
 
+#include <string>
 using namespace std;
 
-class Robot{
+class Robot 
+{
 private:
     string nombre;
-    string tipo;
+    string tipo; 
 
 public:
+    Robot(); // <--- Esta es la línea clave que faltaba
+    Robot(string n, string t); 
 
-    Robot(const string& n, const string& t)
-    {
-        nombre = n;
-        tipo = t;
-    }
+    string getNombre(); 
+    string getTipo(); 
+}; 
 
-    string getNombre() const
-    {
-        return nombre;
-    }
-
-    string getTipo() const  
-    {
-        return tipo;
-    }
-};
+#endif
