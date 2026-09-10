@@ -1,19 +1,19 @@
-#ifndef PARTICIPANT_H
+#ifndef PARTICIPANTE_H
 #define PARTICIPANTE_H
 
-#include <strng>
+#include <string>
 using namespace std;
 
 class Participante
 {
-privat:
-    string nombe;
-    string carera;
+private:
+    string nombre;
+    string carrera;
 
-publc:
-    Participante(string n, string c)
+public:
+    Participante(string n, string c);
 
-    strng getNombre();
+    string getNombre();
     string getCarrera();
 };
 

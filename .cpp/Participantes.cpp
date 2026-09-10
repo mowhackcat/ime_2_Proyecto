@@ -2,16 +2,16 @@
 
 Participante::Participante(string n, string c)
 {
-    nombe = n;
-    carera = c
+    nombre = n;
+    carrera = c;
 }
 
-strng Participante::getNombre()
+string Participante::getNombre()
 {
-    retun nombre;
+    return nombre;
 }
 
 string Participante::getCarrera()
 {
-    return carera;
+    return carrera;
 }
