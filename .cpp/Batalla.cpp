@@ -3,7 +3,7 @@
 #include <cstdlib>
 using namespace std;
 
-Pelea::Pelea(Robot r1,Robot r2){
+Batalla::Batalla(Robot r1,Robot r2){
     Robot robot1 = r1;
     Robot robot2 = r2;
 
@@ -14,4 +14,10 @@ Pelea::Pelea(Robot r1,Robot r2){
     }else{
         ganador = robot2;
     }
+}
+
+void Batalla::mostrarBatalla()
+{
+    cout << robot1.getNombre() << " VS " << robot2.getNombre() << endl;
+    cout << "Ganador: " << ganador.getNombre() << endl;
 }
