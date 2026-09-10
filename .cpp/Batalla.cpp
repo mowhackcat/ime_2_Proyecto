@@ -3,4 +3,7 @@
 #include <cstdlib>
 using namespace std;
 
-Pelea::Pelea(Robot robot1,Robot robot2){}
+Pelea::Pelea(Robot r1,Robot r2){
+    Robot robot1 = r1;
+    Robot robot2 = r2;
+}
