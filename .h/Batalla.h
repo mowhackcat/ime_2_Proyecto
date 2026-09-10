@@ -7,7 +7,7 @@ class Pelea{
     Robot ganador;
 
     public:
-    Pelea(Robot robot1, Robot robot2);
+    Pelea(Robot r1, Robot r2);
 
-    void resultados();
+    void mostrarBatalla();
 };
