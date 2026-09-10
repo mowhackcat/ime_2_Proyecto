@@ -2,12 +2,12 @@
 
 Equipo::Equipo(string n)
 {
-    nombre == n;
+    nombre = n;
 }
 
 void Equipo::agregarParticipante(Participante participante)
 {
-    participantes.push_back(participante)
+    participantes.push_back(participante);
 }
 
 void Equipo::agregarRobot(Robot robot)
@@ -17,7 +17,7 @@ void Equipo::agregarRobot(Robot robot)
 
 string Equipo::getNombre()
 {
-    return nombre();
+    return nombre;
 }
 
 vector<Participante>& Equipo::getParticipantes()
@@ -25,7 +25,7 @@ vector<Participante>& Equipo::getParticipantes()
     return participantes;
 }
 
-vector<Robot> Equipo::getRobots()
+vector<Robot>& Equipo::getRobots()
 {
     return robots;
 }

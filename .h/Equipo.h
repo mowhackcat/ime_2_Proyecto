@@ -16,14 +16,14 @@ private:
     vector<Robot> robots;
 
 public:
-    Equipo(string nombre);
+    Equipo(string n);
 
-    void agregarParticipante(Participante participante)
+    void agregarParticipante(Participante participante);
     void agregarRobot(Robot robot);
 
-    string getNombre;
+    string getNombre();
     vector<Participante>& getParticipantes();
-    vector<Robot> getRobots();
+    vector<Robot>& getRobots();
 };
 
 #endif
