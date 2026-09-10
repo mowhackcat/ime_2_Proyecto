@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Pelea.h"
+#include <Pelea.h>
 #include <cstdlib>
 using namespace std;
 
