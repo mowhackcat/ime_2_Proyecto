@@ -1,3 +1,5 @@
+#ifndef BATALLA_H
+#define BATALLA_H
 #include <Robot.h>
 
 class Pelea{
@@ -11,3 +13,5 @@ class Pelea{
 
     void mostrarBatalla();
 };
+
+#endif
