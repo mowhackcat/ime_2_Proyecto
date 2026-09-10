@@ -2,14 +2,14 @@
 #define BATALLA_H
 #include <Robot.h>
 
-class Pelea{
+class Batalla{
     private:
     Robot robot1;
     Robot robot2;
     Robot ganador;
 
     public:
-    Pelea(Robot r1, Robot r2);
+    Batalla(Robot r1, Robot r2);
 
     void mostrarBatalla();
 };
