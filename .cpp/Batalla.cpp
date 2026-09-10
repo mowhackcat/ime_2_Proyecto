@@ -1,5 +1,5 @@
 #include <iostream>
-#include <Pelea.h>
+#include <Batalla.h>
 #include <cstdlib>
 using namespace std;
 
