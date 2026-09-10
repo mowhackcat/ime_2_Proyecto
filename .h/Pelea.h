@@ -2,12 +2,12 @@
 
 class Pelea{
     private:
-    Robot* robot1;
-    Robot* robot2;
-    Robot* robot3;
+    Robot robot1;
+    Robot robot2;
+    Robot ganador;
 
     public:
-    Pelea(Robot* robot1, Robot* robot2);
+    Pelea(Robot robot1, Robot robot2);
 
     void resultados();
 };
