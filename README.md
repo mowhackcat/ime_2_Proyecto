@@ -137,3 +137,62 @@ FIN
 <br>
 <br>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## 3. Compilacion y ejecucion
+
+### 3.1 Compilación
+
+El proyecto está dividido en diferentes archivos `.h` y `.cpp`, por lo que
+es necesario compilar los archivos de implementación junto con `main.cpp`.
+
+El comando utilizado para compilar el programa fue:
+
+```bash
+g++ -I.h .cpp/*.cpp -o programa.exe
+```
+<br>
+
+### 3.2 Ejecución
+
+Después de compilar correctamente el proyecto, se ejecutó el programa desde
+la terminal de Visual Studio Code utilizando el siguiente comando:
+
+```powershell
+.\programa.exe
+```
+<br>
+
+### 3.3 Errores de compilación y soluciones
+
+Durante el desarrollo del proyecto se presentaron diferentes errores y
+problemas que fueron identificados y corregidos conforme se integraron las
+clases y funciones del programa.
+
+| Problema encontrado | Solución aplicada |
+|---|---|
+| La estructura inicial del programa se encontraba en un solo archivo. | Se reorganizó el proyecto utilizando archivos `.h` y `.cpp` para separar las clases y sus implementaciones. |
+| Las clases necesitaban comunicarse entre sí para registrar participantes y robots dentro de los equipos. | Se establecieron relaciones entre las clases mediante métodos y objetos, por ejemplo, agregando objetos `Participante` y `Robot` a un `Equipo`. |
+| Los robots necesitaban enfrentarse únicamente con robots de su misma disciplina. | Se recorrieron los robots registrados y se agruparon de acuerdo con su tipo antes de formar las batallas. |
+| Los enfrentamientos necesitaban realizarse de manera aleatoria. | Se utilizó `rand()` para determinar aleatoriamente los ganadores y se mezclaron los robots antes de formar las parejas. |
+| Podía quedar un robot sin pareja cuando había una cantidad impar de robots de una disciplina. | Se agregó una condición que detecta cuando un robot no tiene rival y muestra un mensaje indicando esta situación. |
+| Era necesario validar que el tipo de robot fuera una disciplina permitida. | Se agregó una validación que solicita nuevamente el tipo de robot cuando se introduce un valor no válido. |
+| El programa necesitaba generar diferentes resultados en cada ejecución. | Se utilizó `srand(time(0))` al inicio del programa para inicializar la generación de números aleatorios. |
+
+<br>
+<br>
