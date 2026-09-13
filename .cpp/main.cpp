@@ -1,7 +1,9 @@
 //Libreria para cout y cin
 #include <iostream>
+
 //Libreria para usar strings
 #include <string>
+
 //libreria para usar listas dinamicas
 #include <vector>
 
@@ -17,9 +19,16 @@
 
 using namespace std;
 
-void registrarEquipo(Equipo& equipo) 
+
+void registrarEquipo(Equipo& equipo)
 {
     int cantidadParticipantes;
+
+    cout << endl;
+    cout << "====================================================" << endl;
+    cout << "              REGISTRO DEL EQUIPO" << endl;
+    cout << "====================================================" << endl;
+
     cout << "Registro del equipo: " << equipo.getNombre() << endl;
 
     cout << "Ingresa el numero de participantes del equipo: ";
@@ -27,16 +36,19 @@ void registrarEquipo(Equipo& equipo)
 
     cin.ignore(); // Limpiar el buffer de entrada
 
-    for (int i = 0; i <cantidadParticipantes; i++)
+    for (int i = 0; i < cantidadParticipantes; i++)
     {
         string nombre;
         string carrera;
 
+        cout << endl;
+        cout << "---------------- PARTICIPANTE " << i + 1 << " ----------------" << endl;
+
         cout << "Escribe el nombre del participante: ";
         getline(cin, nombre);
-        
+
         cout << "Escribe la carrera del participante: ";
-        getline(cin,carrera);
+        getline(cin, carrera);
 
         Participante participante(nombre, carrera);
 
@@ -44,6 +56,12 @@ void registrarEquipo(Equipo& equipo)
     }
 
     int cantidadRobots;
+
+    cout << endl;
+    cout << "====================================================" << endl;
+    cout << "                 REGISTRO DE ROBOTS" << endl;
+    cout << "====================================================" << endl;
+
     cout << "Ingresa el numero de robots del equipo: ";
     cin >> cantidadRobots;
 
@@ -54,43 +72,68 @@ void registrarEquipo(Equipo& equipo)
         string nombre;
         string tipo;
 
+        cout << endl;
+        cout << "-------------------- ROBOT " << i + 1 << " --------------------" << endl;
+
         cout << "Escribe el nombre del robot: ";
         getline(cin, nombre);
 
-        cout << "Escribe el tipo del robot: ";
+        cout << "Escribe el tipo de robot: ";
         getline(cin, tipo);
+
+        while (tipo != "sumo" &&
+               tipo != "seguidor de linea" &&
+               tipo != "laberinto" &&
+               tipo != "velocista")
+        {
+            cout << "Tipo de robot no valido. Intenta nuevamente: ";
+            getline(cin, tipo);
+        }
 
         Robot robot(nombre, tipo);
 
         equipo.agregarRobot(robot);
     }
+
+    cout << endl;
+    cout << "Equipo registrado correctamente." << endl;
 }
+
 
 void mostrarRegistro(vector<Equipo>& equipos)
 {
-    cout << "----------------------------------------------------"<< endl;
-    cout << "Registro de equipos y participantes" << endl;
+    cout << endl;
+    cout << "====================================================" << endl;
+    cout << "           REGISTRO DE EQUIPOS Y PARTICIPANTES" << endl;
+    cout << "====================================================" << endl;
 
     for (Equipo& equipo : equipos)
     {
+        cout << endl;
+        cout << "----------------------------------------------------" << endl;
         cout << "Nombre del Equipo: " << equipo.getNombre() << endl;
+        cout << "----------------------------------------------------" << endl;
+
         cout << "Participantes en el equipo: " << endl;
 
         for (Participante& participante : equipo.getParticipantes())
         {
-            cout << "~ " << participante.getNombre() 
-                 << "~ " << participante.getCarrera() << endl;
+            cout << "~ " << participante.getNombre()
+                 << " ~ " << participante.getCarrera() << endl;
         }
+
+        cout << endl;
 
         cout << "Robots en el equipo: " << endl;
 
         for (Robot& robot : equipo.getRobots())
         {
-            cout << "~ " << robot.getNombre() 
-                 << "~ " << robot.getTipo() << endl;
+            cout << "~ " << robot.getNombre()
+                 << " ~ " << robot.getTipo() << endl;
         }
     }
 }
+
 
 void iniciarCompetencia(vector<Equipo>& equipos)
 {
@@ -102,12 +145,15 @@ void iniciarCompetencia(vector<Equipo>& equipos)
         "velocista"
     };
 
-    cout << "----------------------------------------------------"<< endl;
-    cout << "Competencia" << endl;
+    cout << endl;
+    cout << "====================================================" << endl;
+    cout << "                  COMPETENCIA" << endl;
+    cout << "====================================================" << endl;
 
     for (int t = 0; t < 4; t++)
     {
         string tipo = tipos[t];
+
         vector<Robot*> robotsDelTipo;
 
         for (Equipo& equipo : equipos)
@@ -121,7 +167,19 @@ void iniciarCompetencia(vector<Equipo>& equipos)
             }
         }
 
-        cout << "Disciplina: " << tipo << endl;
+        cout << endl;
+        cout << "====================================================" << endl;
+        cout << "                 DISCIPLINA: " << tipo << endl;
+        cout << "====================================================" << endl;
+
+        for (int i = robotsDelTipo.size() - 1; i > 0; i--)
+        {
+            int j = rand() % (i + 1);
+
+            Robot* temporal = robotsDelTipo[i];
+            robotsDelTipo[i] = robotsDelTipo[j];
+            robotsDelTipo[j] = temporal;
+        }
 
         if (robotsDelTipo.size() == 0)
         {
@@ -133,18 +191,26 @@ void iniciarCompetencia(vector<Equipo>& equipos)
             {
                 if (i + 1 >= robotsDelTipo.size())
                 {
+                    cout << endl;
+                    cout << "---------------- SIN RIVAL ----------------" << endl;
+
                     cout << "El robot "
                          << robotsDelTipo[i]->getNombre()
                          << " no tiene rival." << endl;
                 }
                 else
                 {
+                    cout << endl;
+                    cout << "------------------ BATALLA ------------------" << endl;
+
                     Batalla batalla(
                         *robotsDelTipo[i],
                         *robotsDelTipo[i + 1]
                     );
 
                     batalla.mostrarBatalla();
+
+                    cout << "----------------------------------------------" << endl;
                 }
             }
         }
@@ -161,16 +227,30 @@ int main()
 
     int cantidadEquipos;
 
-    cout << "----------------------------------------------------"<< endl;
+    cout << endl;
+    cout << "====================================================" << endl;
+    cout << "        SISTEMA DE COMPETENCIA DE ROBOTICA" << endl;
+    cout << "====================================================" << endl;
+
+    cout << endl;
     cout << "Bienvenido a la competencia de robots" << endl;
+
+    cout << endl;
+    cout << "----------------------------------------------------" << endl;
+
     cout << "Ingresa la cantidad de equipos que participaran: ";
     cin >> cantidadEquipos;
 
     cin.ignore(); // Limpiar el buffer de entrada
 
-    for (int i = 0; i <cantidadEquipos; i++)
+    for (int i = 0; i < cantidadEquipos; i++)
     {
         string nombreEquipo;
+
+        cout << endl;
+        cout << "====================================================" << endl;
+        cout << "                     EQUIPO " << i + 1 << endl;
+        cout << "====================================================" << endl;
 
         cout << "Nombre del equipo: ";
         getline(cin, nombreEquipo);
@@ -186,8 +266,10 @@ int main()
 
     iniciarCompetencia(equipos);
 
-    cout << "----------------------------------------------------"<< endl;
-    cout << "Competencia finalizada." << endl;
+    cout << endl;
+    cout << "====================================================" << endl;
+    cout << "              COMPETENCIA FINALIZADA." << endl;
+    cout << "====================================================" << endl;
 
     return 0;
 }

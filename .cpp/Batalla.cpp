@@ -1,23 +1,39 @@
 #include <iostream>
-#include "Batalla.h"
 #include <cstdlib>
+#include "Batalla.h"
+
 using namespace std;
 
-Batalla::Batalla(Robot r1,Robot r2){
-    Robot robot1 = r1;
-    Robot robot2 = r2;
+Batalla::Batalla(Robot r1, Robot r2)
+{
+    robot1 = r1;
+    robot2 = r2;
 
-    int resultado = rand ()%2;
+    int resultado = rand() % 2;
 
-    if (resultado==0){
+    if (resultado == 0)
+    {
         ganador = robot1;
-    }else{
+    }
+    else
+    {
         ganador = robot2;
     }
 }
 
 void Batalla::mostrarBatalla()
 {
-    cout << robot1.getNombre() << " VS " << robot2.getNombre() << endl;
-    cout << "Ganador: " << ganador.getNombre() << endl;
+    cout << "Robot 1: " << robot1.getNombre() << endl;
+    cout << "Robot 2: " << robot2.getNombre() << endl;
+
+    cout << endl;
+
+    cout << robot1.getNombre()
+         << " VS "
+         << robot2.getNombre()
+         << endl;
+
+    cout << "Ganador: "
+         << ganador.getNombre()
+         << endl;
 }
