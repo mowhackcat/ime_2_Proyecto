@@ -372,6 +372,7 @@ se fue integrando y probando el sistema.
 | Era necesario determinar aleatoriamente al ganador de cada batalla. | Se creó la clase `Batalla`, encargada de realizar el enfrentamiento y seleccionar al ganador. |
 | La información mostrada durante la ejecución podía resultar confusa. | Se mejoró la presentación de la consola mediante títulos, separadores y mensajes descriptivos. |
 | Durante algunas ejecuciones se presentó un comportamiento inesperado con la entrada de datos, mostrando repetidamente el mensaje de tipo de robot no válido. | Se identificó el comportamiento durante las pruebas y se revisó el proceso de captura y validación de datos. |
+| Al programa solicitar un valor, el usuario podía ingresar carácteres que podían causar un error y hacer que este entre en un bucle. | Se implemento en el archivo "main.cpp" la funcion `solicitarCantidad()` que garantiza que el usuario ingrese un valor valido. |
 <br>
 
 
