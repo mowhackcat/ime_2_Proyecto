@@ -7,6 +7,8 @@
 //libreria para usar listas dinamicas
 #include <vector>
 
+#include <limits>
+
 #include <cstdlib>
 
 #include <ctime>
@@ -18,6 +20,27 @@
 #include "Batalla.h"
 
 using namespace std;
+
+//Funcion para solicitar una cantidad al usuario y validar que sea un numero entero positivo
+int solicitarCantidad(const string& mensaje, bool permitirCero)
+{
+    int cantidad;
+
+    while (true)
+    {
+        cout << mensaje;
+
+        if (cin >> cantidad && cantidad >= 0 && (permitirCero || cantidad > 0))
+        {
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            return cantidad;
+        }
+
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Ingresa una cantidad valida." << endl;
+    }
+}
 
 
 void registrarEquipo(Equipo& equipo)
@@ -31,10 +54,9 @@ void registrarEquipo(Equipo& equipo)
 
     cout << "Registro del equipo: " << equipo.getNombre() << endl;
 
-    cout << "Ingresa el numero de participantes del equipo: ";
-    cin >> cantidadParticipantes;
-
-    cin.ignore(); // Limpiar el buffer de entrada
+    cantidadParticipantes = solicitarCantidad(
+        "Ingresa el numero de participantes del equipo: ", true
+    );
 
     for (int i = 0; i < cantidadParticipantes; i++)
     {
@@ -62,10 +84,9 @@ void registrarEquipo(Equipo& equipo)
     cout << "                 REGISTRO DE ROBOTS" << endl;
     cout << "====================================================" << endl;
 
-    cout << "Ingresa el numero de robots del equipo: ";
-    cin >> cantidadRobots;
-
-    cin.ignore(); // Limpiar el buffer de entrada
+    cantidadRobots = solicitarCantidad(
+        "Ingresa el numero de robots del equipo: ", true
+    );
 
     for (int i = 0; i < cantidadRobots; i++)
     {
@@ -77,6 +98,12 @@ void registrarEquipo(Equipo& equipo)
 
         cout << "Escribe el nombre del robot: ";
         getline(cin, nombre);
+        
+        cout << "Tipos de robots disponibles:" << endl; 
+        cout << "sumo," << endl;
+        cout << "seguidor de linea," << endl;
+        cout << "laberinto," << endl; 
+        cout << "velocista" << endl;
 
         cout << "Escribe el tipo de robot: ";
         getline(cin, tipo);
@@ -172,12 +199,13 @@ void iniciarCompetencia(vector<Equipo>& equipos)
         cout << "                 DISCIPLINA: " << tipo << endl;
         cout << "====================================================" << endl;
 
-        for (int i = robotsDelTipo.size() - 1; i > 0; i--)
+        for (size_t i = robotsDelTipo.size(); i > 1; i--)
         {
-            int j = rand() % (i + 1);
+            size_t indice = i - 1;
+            size_t j = rand() % i;
 
-            Robot* temporal = robotsDelTipo[i];
-            robotsDelTipo[i] = robotsDelTipo[j];
+            Robot* temporal = robotsDelTipo[indice];
+            robotsDelTipo[indice] = robotsDelTipo[j];
             robotsDelTipo[j] = temporal;
         }
 
@@ -187,7 +215,7 @@ void iniciarCompetencia(vector<Equipo>& equipos)
         }
         else
         {
-            for (int i = 0; i < robotsDelTipo.size(); i += 2)
+            for (size_t i = 0; i < robotsDelTipo.size(); i += 2)
             {
                 if (i + 1 >= robotsDelTipo.size())
                 {
@@ -238,10 +266,9 @@ int main()
     cout << endl;
     cout << "----------------------------------------------------" << endl;
 
-    cout << "Ingresa la cantidad de equipos que participaran: ";
-    cin >> cantidadEquipos;
-
-    cin.ignore(); // Limpiar el buffer de entrada
+    cantidadEquipos = solicitarCantidad(
+        "Ingresa la cantidad de equipos que participaran: ", false
+    );
 
     for (int i = 0; i < cantidadEquipos; i++)
     {
