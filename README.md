@@ -423,4 +423,19 @@ Mientras trabajabamos en este proyecto logramos, por decirlo de una forma, refor
 - Se reforzo nuestra manera de abstraer lo que necesitasmos realizar para evitar desperdiciar tiempo en algo que no es importante
 - La importancia de usar # como def o indef para evitar que el archivo se incluya mas de una vez
 
+## 6. Integrantes
 
+| Integrante | Rol |
+|---|---|
+| Luis Samano Saavedra | Analista / líder de diseño |
+| Jesus Rene Pamanes Ferreira | Programador principal |
+| Daniel Gerardo Guerra Rodriguez | Programador de módulos |
+| Yurik David Alarcon Gutierrez | Tester / QA |
+| Fernando Caleb Roman Zamarripa | Documentador / presentador |
+
+
+## 7.Promts
+![Promt1](img/Prompt1.png)
+![Promt1](img/Promt2.png)
+![Promt1](img/Prompt3.png)
+![Promt1](img/Prompt4.png)
