@@ -337,6 +337,70 @@ clases y funciones del programa.
 <br>
 <br>
 
+## 4. Pruebas y depuraciones
+### 4.1 Pruebas realizadas
+
+Para comprobar el funcionamiento del programa se realizaron diferentes casos
+de prueba, considerando diferentes cantidades de equipos y robots, así como
+diferentes disciplinas.
+
+| Caso | Escenario | Resultado esperado | Resultado obtenido | Estado |
+|---|---|---|---|---|
+| 1 | Un equipo con 2 robots del mismo tipo. | Los robots deben enfrentarse y debe mostrarse un ganador. | Se realizó una batalla y se mostró un ganador. | ✓ Aprobado |
+| 2 | Varios equipos con participantes y robots. | Los equipos, participantes y robots deben registrarse correctamente. | La información se registró y se mostró correctamente. | ✓ Aprobado |
+| 3 | Un solo robot de una disciplina. | El robot debe aparecer como un robot sin rival. | El programa indicó que el robot no tenía rival. | ✓ Aprobado |
+| 4 | Tres robots del mismo tipo. | Debe realizarse una batalla y un robot debe quedar sin rival. | Se realizó una batalla y un robot quedó sin rival. | ✓ Aprobado |
+| 5 | Cuatro robots del mismo tipo. | Deben realizarse dos batallas sin robots sin rival. | Se realizaron dos batallas correctamente. | ✓ Aprobado |
+| 6 | Robots de diferentes disciplinas. | Solo deben enfrentarse robots de la misma disciplina. | Los robots fueron separados por disciplina y se enfrentaron correctamente. | ✓ Aprobado |
+| 7 | Ejecutar varias veces la misma competencia. | Los emparejamientos y/o ganadores deben poder cambiar aleatoriamente. | Los emparejamientos y ganadores cambiaron entre ejecuciones. | ✓ Aprobado |
+<br>
+
+### 4.2 Errores encontrados y soluciones
+
+Durante el desarrollo y las pruebas del programa se identificaron diferentes
+problemas y aspectos que podían mejorarse. Estos fueron solucionados conforme
+se fue integrando y probando el sistema.
+
+| Problema o aspecto detectado | Solución aplicada |
+|---|---|
+| El código se encontraba inicialmente concentrado en un solo archivo. | Se separó el programa en clases y archivos `.h` y `.cpp`. |
+| Era necesario almacenar varios participantes y robots dentro de cada equipo. | Se utilizaron `vector<Participante>` y `vector<Robot>` dentro de la clase `Equipo`. |
+| La combinación de `cin` y `getline` podía ocasionar problemas al capturar datos. | Se utilizó `cin.ignore()` para limpiar el buffer antes de utilizar `getline()`. |
+| Era necesario evitar el registro de disciplinas no válidas. | Se agregó una validación que solicita nuevamente el tipo de robot cuando no pertenece a las disciplinas permitidas. |
+| Los enfrentamientos debían realizarse de manera aleatoria. | Se implementó una mezcla aleatoria de los robots antes de formar las parejas. |
+| Podía quedar un robot sin rival cuando había una cantidad impar de robots. | Se agregó una condición para detectar y mostrar los robots que quedan sin rival. |
+| Era necesario determinar aleatoriamente al ganador de cada batalla. | Se creó la clase `Batalla`, encargada de realizar el enfrentamiento y seleccionar al ganador. |
+| La información mostrada durante la ejecución podía resultar confusa. | Se mejoró la presentación de la consola mediante títulos, separadores y mensajes descriptivos. |
+| Durante algunas ejecuciones se presentó un comportamiento inesperado con la entrada de datos, mostrando repetidamente el mensaje de tipo de robot no válido. | Se identificó el comportamiento durante las pruebas y se revisó el proceso de captura y validación de datos. |
+<br>
+
+
+### 4.3 Optimizaciones
+
+Durante el desarrollo se realizaron diferentes mejoras para organizar el
+código y facilitar su funcionamiento y mantenimiento.
+
+- Se dividieron las clases en archivos `.h` y `.cpp`, permitiendo separar las
+  declaraciones de las implementaciones.
+
+- Se utilizaron `vector` para almacenar dinámicamente los equipos,
+  participantes y robots.
+
+- Se separaron diferentes procesos en funciones como `registrarEquipo()`,
+  `mostrarRegistro()` e `iniciarCompetencia()`, evitando concentrar todo el
+  funcionamiento en `main()`.
+
+- Se implementó la mezcla aleatoria de los robots antes de formar las
+  parejas, permitiendo obtener diferentes enfrentamientos en cada ejecución.
+
+- Se agregaron títulos, separadores y mensajes descriptivos en la consola para
+  facilitar la lectura de la información durante la ejecución.
+
+- Se utilizaron métodos `get` para acceder a los atributos privados de las
+  clases, manteniendo el principio de encapsulamiento.
+<br>
+<br>
+
 ## 5.Mantenimiento
 
 ### 5.1 Mejoras futuras
