@@ -336,3 +336,26 @@ clases y funciones del programa.
 
 <br>
 <br>
+
+## 5.Mantenimiento
+
+### 5.1 Mejoras futuras
+Para versiones futuras podemos considerar:
+
+- Incorporar algun tipo de herencia a otras clases relacionadas con los diferentes tipos de robot
+- Agregar una interfaz grafica
+- Implementar un sistema para clasificar, guardar los resultados y la informacion de los registros
+- Consultar el historial
+- Agregar un mejor metodo vara verificar las entradas y manejar el error humano
+- evitar usar el using namespace std
+
+### 5.2 Lecciones aprendidas
+Mientras trabajabamos en este proyecto logramos, por decirlo de una forma, reforzar ciertos temas, ademas de reforzar ciertas practias gracias a prueba y error, mayormente error
+
+- El uso de los archivos .h y .cpp para organizar y separar el codigo
+- Logramos entender la importancia de probar el codigo mientras lo trabajabamos
+- Se reforzo la idea de mantener ciertos aspectos de la clase privados y otros publicos
+- Se reforzo nuestra manera de abstraer lo que necesitasmos realizar para evitar desperdiciar tiempo en algo que no es importante
+- La importancia de usar # como def o indef para evitar que el archivo se incluya mas de una vez
+
+
