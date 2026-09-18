@@ -38,8 +38,9 @@ int solicitarCantidad(const string& mensaje, bool permitirCero)
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             return cantidad;
         }
-
+        //Limpiar error de entrada
         cin.clear();
+        //Limpiar el buffer de entrada
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << "Ingresa una cantidad valida." << endl;
     }
