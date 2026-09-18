@@ -18,7 +18,9 @@ private:
 public:
     Equipo(string n);
 
+    //Agregar un participante al vector de participantes del equipo
     void agregarParticipante(Participante participante);
+    //Agregar un robot al vector de robots del equipo
     void agregarRobot(Robot robot);
 
     string getNombre();
