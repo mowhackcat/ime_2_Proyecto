@@ -1,3 +1,4 @@
+//Sinonimo Tradicional de Pragma once
 #ifndef EQUIPO_H
 #define EQUIPO_H
 

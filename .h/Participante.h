@@ -1,3 +1,4 @@
+//Sinonimo Tradicional de Pragma once
 #ifndef PARTICIPANTE_H
 #define PARTICIPANTE_H
 

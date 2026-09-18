@@ -1,3 +1,4 @@
+//Sinonimo Tradicional de Pragma once
 #ifndef BATALLA_H
 #define BATALLA_H
 

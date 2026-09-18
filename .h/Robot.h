@@ -1,3 +1,4 @@
+//Sinonimo Tradicional de Pragma once
 #ifndef ROBOT_H
 #define ROBOT_H
 
