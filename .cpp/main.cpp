@@ -7,10 +7,13 @@
 //libreria para usar listas dinamicas
 #include <vector>
 
+//Libreria para usar limites de datos
 #include <limits>
 
+//Libreria para usar numeros aleatorios
 #include <cstdlib>
 
+//Libreria para usar tiempo
 #include <ctime>
 
 //Inlcuir archivos .h
