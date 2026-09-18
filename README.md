@@ -120,7 +120,8 @@ FIN
 
 ![Diagrama de flujo](img/diagrama_flujo.png)
 <br>
-
+![Diagrama de flujo](img/DiagramaClases.png)
+<br>
 
 ### 1.5 Casos de prueba anticipados
 
