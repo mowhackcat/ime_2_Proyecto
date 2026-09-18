@@ -12,7 +12,7 @@ private:
     string carrera;
 
 public:
-    Participante(string n, string c);
+    Participante(string n, string c);//Constructor que recibe el nombre y la carrera del participante
 
     string getNombre();
     string getCarrera();

@@ -12,7 +12,7 @@ private:
     Robot ganador;
 
 public:
-    Batalla(Robot r1, Robot r2);
+    Batalla(Robot r1, Robot r2); //Constructor que recibe dos robots y determina aleatoriamente un ganador
 
     void mostrarBatalla();
 };

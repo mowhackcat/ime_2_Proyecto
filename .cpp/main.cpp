@@ -181,6 +181,7 @@ void iniciarCompetencia(vector<Equipo>& equipos)
     cout << "                  COMPETENCIA" << endl;
     cout << "====================================================" << endl;
 
+    //Recorrer las 4 disciplinas de robots
     for (int t = 0; t < 4; t++)
     {
         string tipo = tipos[t];

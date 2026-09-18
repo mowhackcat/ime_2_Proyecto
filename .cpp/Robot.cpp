@@ -1,6 +1,6 @@
 #include "Robot.h"
 
-Robot::Robot() // <--- Implementación del constructor vacío
+Robot::Robot() // <--- Implementación del constructor vacía
 {
     nombre = "";
     tipo = "";
